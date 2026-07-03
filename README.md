@@ -37,7 +37,7 @@ src/
 Clone o repositório:
 
 ```bash
-git clone <url-do-repositorio>
+git clone <https://github.com/ednacristinads/green_view>
 ```
 
 Acesse a pasta do projeto:
@@ -66,7 +66,7 @@ http://localhost:5173
 
 ## Objetivo acadêmico
 
-Este projeto foi desenvolvido para fins acadêmicos como atividade da disciplina de Interação Humano-Computador (IHC), representando um MVP funcional sem integração com banco de dados.
+Este projeto foi desenvolvido para fins acadêmicos como atividade da disciplina de Interação Humano-Computador (IHC), representando um MVP funcional, não foi exigido banco de dados.
 
 ## Equipe
 
