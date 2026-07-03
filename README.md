@@ -1,6 +1,7 @@
 ## Tema
 
 AgTech e Segurança Alimentar
+Resolver o desperdício na cadeia de suprimentos e aumentar a produtividade no campo. Exemplos: sensores de solo de baixo custo, drones para aplicação de defensivos e proteínas alternativas.
 
 ## Funcionalidades
 
