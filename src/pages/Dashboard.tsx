@@ -5,10 +5,21 @@ interface CardProps {
   valor: string;
 }
 
+// saudação conforme o horário 
+const horaAtual = new Date().getHours();
+
+let saudacao = "Boa noite";
+
+if (horaAtual >= 5 && horaAtual < 12) {
+  saudacao = "Bom dia";
+} else if (horaAtual >= 12 && horaAtual < 18) {
+  saudacao = "Boa tarde";
+}
+
 // cards de indicadores
 function Card({ titulo, valor }: CardProps) {
   return (
-    <div className="rounded-xl bg-white p-5 shadow">
+    <div className="rounded-xl bg-white p-5 shadow transition hover:shadow-lg">
       <p className="text-sm text-gray-500">{titulo}</p>
 
       <h2 className="mt-2 text-3xl font-bold text-green-700">
@@ -21,7 +32,18 @@ function Card({ titulo, valor }: CardProps) {
 export default function Dashboard() {
   return (
     <MainLayout>
-      {/* indicadores principais do sistema */}
+
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold text-gray-800">
+          {saudacao}, Gustavo
+        </h1>
+
+        <p className="mt-2 text-gray-500">
+          Confira os principais indicadores da sua propriedade.
+        </p>
+      </div>
+
+      {/* indicadores que vão pro destaque */}
 
       <div className="grid grid-cols-4 gap-6">
         <Card titulo="Umidade do Solo" valor="48%" />
@@ -41,10 +63,10 @@ export default function Dashboard() {
             Gráfico de Monitoramento
           </h2>
 
-          {/*  adicionar gráfico */}
+          {/****** falta adicionar gráfico *******/}
 
           <div className="flex h-72 items-center justify-center rounded-lg border-2 border-dashed border-gray-300">
-            Área destinada ao gráfico
+            Espaço para o gráfico
           </div>
         </section>
 
@@ -53,7 +75,7 @@ export default function Dashboard() {
             Monitoramento
           </h2>
 
-          {/* tabela com o status dos sensores */}
+          {/* tabela com o status dos sensores*/}
 
           <table className="w-full text-left">
             <thead>
@@ -68,26 +90,26 @@ export default function Dashboard() {
               <tr className="border-b">
                 <td className="py-3">Sensor 01</td>
 
-                <td>Online</td>
+                <td className="font-medium text-green-600">Online</td>
               </tr>
 
               <tr className="border-b">
                 <td className="py-3">Sensor 02</td>
 
-                <td>Online</td>
+                <td className="font-medium text-green-600">Online</td>
               </tr>
 
               <tr>
                 <td className="py-3">Sensor 03</td>
 
-                <td>Offline</td>
+                <td className="font-medium text-red-600">Offline</td>
               </tr>
             </tbody>
           </table>
         </section>
       </div>
 
-      {/* informações complementares */}
+      {/*   informações complementares, etc */}
 
       <div className="mt-8 grid grid-cols-3 gap-6">
         <section className="rounded-xl bg-white p-6 shadow">
@@ -117,21 +139,22 @@ export default function Dashboard() {
             Relatórios
           </h2>
 
-          {/* botões para geração de relatórios */}
+          {/*botões para geração de relatórios*/}
 
-          <button className="mb-3 w-full rounded-lg bg-green-700 py-2 text-white">
+          <button className="mb-3 w-full rounded-lg bg-green-700 py-2 text-white transition hover:bg-green-800">
             Relatório Diário
           </button>
 
-          <button className="mb-3 w-full rounded-lg bg-green-700 py-2 text-white">
+          <button className="mb-3 w-full rounded-lg bg-green-700 py-2 text-white transition hover:bg-green-800">
             Relatório Semanal
           </button>
 
-          <button className="w-full rounded-lg bg-green-700 py-2 text-white">
+          <button className="w-full rounded-lg bg-green-700 py-2 text-white transition hover:bg-green-800">
             Exportar PDF
           </button>
         </section>
       </div>
+
     </MainLayout>
   );
 }

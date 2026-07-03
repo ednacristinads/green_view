@@ -1,32 +1,75 @@
-# React + TypeScript + Vite
+## Tema
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+AgTech e Segurança Alimentar
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Tela de login
+- Dashboard com indicadores agrícolas
+- Monitoramento de sensores
+- Relatórios
+- Perfil do usuário
+- Navegação entre páginas
 
-## React Compiler
+## Tecnologias utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- React Router
+- Tailwind CSS
 
-## Expanding the Oxlint configuration
+## Estrutura do projeto
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+src/
+├── assets/
+├── components/
+├── layouts/
+├── pages/
+├── routes/
+├── styles/
+└── types/
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Como executar o projeto
+
+Clone o repositório:
+
+```bash
+git clone <url-do-repositorio>
+```
+
+Acesse a pasta do projeto:
+
+```bash
+cd greenview
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute o projeto:
+
+```bash
+npm run dev
+```
+
+Depois acesse:
+
+```
+http://localhost:5173
+```
+
+## Objetivo acadêmico
+
+Este projeto foi desenvolvido para fins acadêmicos como atividade da disciplina de Interação Humano-Computador (IHC), representando um MVP funcional sem integração com banco de dados.
+
+## Equipe
+
+- Edna Cristina Durans
+- Enzo Felipe Prudêncio
+- Francisco Elias Fernandes

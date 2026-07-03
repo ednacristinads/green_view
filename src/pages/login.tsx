@@ -1,71 +1,89 @@
+import { FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
-// importar a logo 
-import logo from "../assets/logo_greew_view.png";
+// importar logo >>>
+// import logo from "../assets/logo.png";
 
 export default function Login() {
   const navigate = useNavigate();
 
-  // simula o login e redireciona para o dashboard
-  function handleLogin(event: React.FormEvent<HTMLFormElement>) {
+  // simula o login do usuário
+  function handleLogin(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
     navigate("/dashboard");
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-green-100">
-      <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-lg">
+    <div className="flex min-h-screen items-center justify-center bg-[#F5F7F4] px-4">
 
-          {/*<img src={ }alt="logo greenview" className="mx-auto mb-4 h-24" />*/} {/*LOGO - EDITAR*/}
+      <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
 
-        <h1 className="mb-2 text-center text-4xl font-bold text-green-700">
+        {/* adicionar logo */}
+
+        {/* <img
+          src={logo}
+          alt="greenview"
+          className="mx-auto mb-6 h-24"
+        /> */}
+
+        <h1 className="text-center text-4xl font-bold text-green-700">
           GreenView
         </h1>
 
-        <p className="mb-8 text-center text-gray-500">
-          Smart Agriculture Monitoring System {/*AVALIAR SE MUDA OU NÃO COM ENZO */}
+        <p className="mt-2 mb-8 text-center text-gray-500">
+          Smart Agriculture Monitoring System
         </p>
+
+        {/* formulário */}
 
         <form onSubmit={handleLogin}>
 
-          <div className="mb-4">
+          <div className="mb-5">
 
-            <label className="mb-2 block font-medium">
-              e-mail
+            <label className="mb-2 block text-sm font-medium">
+              E-mail
             </label>
 
             <input
               type="email"
-              placeholder="digite seu e-mail"
-              className="w-full rounded-lg border border-gray-300 p-3 outline-none focus:border-green-700"
+              placeholder="Digite seu e-mail"
+              required
+              className="w-full rounded-lg border border-gray-300 p-3 outline-none transition focus:border-green-700"
             />
 
           </div>
 
-          <div className="mb-6">
+          <div className="mb-8">
 
-            <label className="mb-2 block font-medium">
-              senha
+            <label className="mb-2 block text-sm font-medium">
+              Senha
             </label>
 
             <input
               type="password"
-              placeholder="digite sua senha"
-              className="w-full rounded-lg border border-gray-300 p-3 outline-none focus:border-green-700"
+              placeholder="Digite sua senha"
+              required
+              className="w-full rounded-lg border border-gray-300 p-3 outline-none transition focus:border-green-700"
             />
 
           </div>
 
           <button
             type="submit"
-            className="w-full rounded-lg bg-green-700 p-3 font-semibold text-white transition hover:bg-green-800"
+            className="w-full rounded-lg bg-green-700 py-3 font-semibold text-white transition hover:bg-green-800"
           >
-            entrar
+            Entrar
           </button>
 
         </form>
 
+        <p className="mt-6 text-center text-sm text-gray-500">
+          GreenView © 2026 - Todos os direitos reservados
+        </p>
+
       </div>
+
     </div>
   );
 }

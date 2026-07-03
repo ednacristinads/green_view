@@ -1,7 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+// import logo from "../assets/logo.png"
 
 export default function Sidebar() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const menu = [
     {
@@ -22,10 +24,16 @@ export default function Sidebar() {
     },
   ];
 
+  // volta para a tela de login
+  function handleLogout() {
+    navigate("/");
+  }
+
   return (
-    <aside className="min-h-screen w-64 bg-green-800 text-white">
+    <aside className="flex min-h-screen w-64 flex-col bg-green-800 text-white">
       <div className="border-b border-green-700 p-6">
-        {/* importar a logo aqui quando estiver pronta */}
+
+        {/* importar a logo, se for colocar, né?*/}
         {/* <img src={logo} alt="greenview" className="mb-4" /> */}
 
         <h1 className="text-3xl font-bold">
@@ -37,7 +45,7 @@ export default function Sidebar() {
         </p>
       </div>
 
-      <nav className="mt-6 flex flex-col">
+      <nav className="mt-6 flex flex-1 flex-col">
         {menu.map((item) => (
           <Link
             key={item.rota}
@@ -52,6 +60,15 @@ export default function Sidebar() {
           </Link>
         ))}
       </nav>
+
+      <div className="mt-auto p-6">
+        <button
+          onClick={handleLogout}
+          className="w-full rounded-lg border border-white bg-white py-3 font-semibold text-green-800 transition hover:bg-gray-100"
+        >
+          Sair
+        </button>
+      </div>
     </aside>
   );
 }

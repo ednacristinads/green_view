@@ -6,7 +6,7 @@ import MainLayout from "../layouts/MainLayout";
 export default function Perfil() {
   return (
     <MainLayout>
-      {/* título da página */}
+      {/*título da página*/}
 
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-700">
@@ -20,7 +20,7 @@ export default function Perfil() {
 
       <div className="grid grid-cols-3 gap-6">
 
-        {/* informações do usuário */}
+        {/*informações do usuário > perfil*/}
 
         <section className="col-span-2 rounded-xl bg-white p-6 shadow">
 
@@ -38,7 +38,7 @@ export default function Perfil() {
 
               <input
                 type="text"
-                value="Edna"
+                value="Gustavo Tubarão"
                 readOnly
                 className="w-full rounded-lg border p-3"
               />
@@ -68,7 +68,7 @@ export default function Perfil() {
 
               <input
                 type="email"
-                value="edna@email.com"
+                value="Gustavo.tubarão@gmail.com"
                 readOnly
                 className="w-full rounded-lg border p-3"
               />
@@ -83,7 +83,7 @@ export default function Perfil() {
 
               <input
                 type="text"
-                value="GreenView"
+                value="Tubarões do Agro"
                 readOnly
                 className="w-full rounded-lg border p-3"
               />
@@ -94,7 +94,8 @@ export default function Perfil() {
 
         </section>
 
-        {/* resumo da conta */}
+
+        {/*resumo da opera*/}
 
         <section className="rounded-xl bg-white p-6 shadow">
 
@@ -129,7 +130,7 @@ export default function Perfil() {
             </div>
 
             <div>
-
+                {/*informações adicionais*/}
               <p className="text-sm text-gray-500">
                 Último Acesso
               </p>
