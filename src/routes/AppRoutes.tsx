@@ -16,6 +16,6 @@ export default function AppRoutes() {
         <Route path="/relatorios" element={<Relatorios />} />
         <Route path="/perfil" element={<Perfil />} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> //psipsipsipsi
   );
 }

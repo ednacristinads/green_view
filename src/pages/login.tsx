@@ -1,57 +1,69 @@
 import { useNavigate } from "react-router-dom";
 
+// importar a logo 
+import logo from "../assets/logo_greew_view.png";
+
 export default function Login() {
   const navigate = useNavigate();
 
-  // Simulacao do login >>> Dash
-  function handleLogin() {
+  // simula o login e redireciona para o dashboard
+  function handleLogin(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     navigate("/dashboard");
   }
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-green-100">
-      <div className="w-[420px] rounded-xl bg-white p-8 shadow-lg">
+      <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-lg">
 
-        <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-green-700">
-            GreenView
-          </h1>
+          {/*<img src={ }alt="logo greenview" className="mx-auto mb-4 h-24" />*/} {/*LOGO - EDITAR*/}
 
-          <p className="text-gray-500">
-            Smart Agriculture Monitoring System
-          </p>
-        </div>
+        <h1 className="mb-2 text-center text-4xl font-bold text-green-700">
+          GreenView
+        </h1>
 
-        <div className="mb-4">
-          <label className="mb-2 block font-medium">
-            E-mail
-          </label>
+        <p className="mb-8 text-center text-gray-500">
+          Smart Agriculture Monitoring System {/*AVALIAR SE MUDA OU NÃO COM ENZO */}
+        </p>
 
-          <input
-            type="email"
-            placeholder="Digite seu e-mail"
-            className="w-full rounded border p-3"
-          />
-        </div>
+        <form onSubmit={handleLogin}>
 
-        <div className="mb-6">
-          <label className="mb-2 block font-medium">
-            Senha
-          </label>
+          <div className="mb-4">
 
-          <input
-            type="password"
-            placeholder="Digite sua senha"
-            className="w-full rounded border p-3"
-          />
-        </div>
+            <label className="mb-2 block font-medium">
+              e-mail
+            </label>
 
-        <button
-          onClick={handleLogin}
-          className="w-full rounded bg-green-700 p-3 font-semibold text-white transition hover:bg-green-800"
-        >
-          Entrar
-        </button>
+            <input
+              type="email"
+              placeholder="digite seu e-mail"
+              className="w-full rounded-lg border border-gray-300 p-3 outline-none focus:border-green-700"
+            />
+
+          </div>
+
+          <div className="mb-6">
+
+            <label className="mb-2 block font-medium">
+              senha
+            </label>
+
+            <input
+              type="password"
+              placeholder="digite sua senha"
+              className="w-full rounded-lg border border-gray-300 p-3 outline-none focus:border-green-700"
+            />
+
+          </div>
+
+          <button
+            type="submit"
+            className="w-full rounded-lg bg-green-700 p-3 font-semibold text-white transition hover:bg-green-800"
+          >
+            entrar
+          </button>
+
+        </form>
 
       </div>
     </div>
